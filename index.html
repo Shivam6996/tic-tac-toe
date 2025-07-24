@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tic Tac Toe with Sounds</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Menu -->
+  <div id="menu" class="show">
+    <h1>Tic Tac Toe</h1>
+    <button class="btn" id="btnComputer">Computer</button>
+    <button class="btn" id="btnLocal">Local</button>
+  </div>
+
+  <!-- Game -->
+  <div id="game">
+    <h1 id="gameModeTitle">Local Game</h1>
+    <div class="board" id="board"></div>
+    <div id="scores">
+      X: <span id="scoreX">0</span> |
+      O: <span id="scoreO">0</span> |
+      Draws: <span id="scoreDraw">0</span>
+    </div>
+    <button class="btn" id="resetBtn">Reset</button>
+    <button class="btn" id="backBtn">Back</button>
+  </div>
+
+  <!-- Audio elements for playing sounds -->
+  <audio id="moveSound" src="click.mp3"></audio>
+  <audio id="winSound" src="win.mp3"></audio>
+  <audio id="defeatSound" src="defeat.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

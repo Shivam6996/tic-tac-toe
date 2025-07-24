@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  user-select: none;
+  text-align: center;
+  padding: 20px;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #fff;
+}
+#menu,
+#game {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.show {
+  display: flex !important;
+}
+.btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  color: white;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(8px);
+  width: 80%;
+  max-width: 300px;
+}
+.btn:hover {
+  background: white;
+  color: #7b2ff7;
+  box-shadow: 0 0 15px white;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4vw;
+  margin-top: 20px;
+  width: 90vw;
+  max-width: 360px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+.cell {
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8vw;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  aspect-ratio: 1 / 1;
+}
+.cell:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.x {
+  color: #ff6ec7;
+  animation: pop 0.2s ease;
+}
+.o {
+  color: #00e5ff;
+  animation: pop 0.2s ease;
+}
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.line {
+  position: absolute;
+  height: 4px;
+  background: white;
+  box-shadow: 0 0 15px #fff;
+  transform-origin: left center;
+  animation: drawLine 0.4s ease forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+#scores {
+  margin-top: 20px;
+  font-size: 1rem;
+  user-select: text;
+}
+#backBtn {
+  margin-top: 15px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+#backBtn:hover {
+  background: white;
+  color: #7b2ff7;
+  box-shadow: 0 0 15px white;
+}
+
+/* Smaller mobile screens */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+  #scores {
+    font-size: 0.9rem;
+  }
+}
